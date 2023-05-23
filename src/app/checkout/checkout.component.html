@@ -1,0 +1,253 @@
+        <p-toast position="bottom-center" key="bc" [showTransitionOptions]="'0ms'"
+            [hideTransitionOptions]="'0ms'"></p-toast>
+
+                    <div class="surface-ground px-2 md:px-6 lg:px-8">
+                        <form [formGroup]="checkoutform">
+                        <div class="grid">
+                            <div class="col-12 lg:col-8 p-4 ">
+                                <div class="surface-card grid formgrid p-fluid border-round shadow-2 p-4 ">
+                                    <div class="col-12 mt-4 lg:mt-0 mb-4 ">
+                                        <div class="Formlabel">Shipping</div>
+                                    </div>
+                                    <div class="col-12 field">
+                                        <label for="email" class="Formlabel">Email</label>
+                                        <input id="email" type="text" class="p-inputtext w-full mb-1 "
+                                            formControlName="email"
+                                            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                                        <small *ngIf="submitted && f['email'].errors" class="p-error">
+                                            <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                            <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                                        </small>
+                                    </div>
+
+                                    <div class="col-12 lg:col-6 field">
+                                        <label for="FirstName" class="Formlabel">First Name</label>
+                                        <input id="FirstName" type="text" class="p-inputtext w-full mb-1 "
+                                            formControlName="FirstName"
+                                            [ngClass]="{ 'is-invalid': submitted && f['FirstName'].errors }">
+                                        <small *ngIf="submitted && f['FirstName'].errors" class="p-error">
+                                            <div *ngIf="f['FirstName'].errors['required']">FirstName is required</div>
+                                            <div *ngIf="f['FirstName'].errors['FirstName']">FirstName is invalid</div>
+                                            <div *ngIf="f['FirstName'].errors['maxlength']">Limit over</div>
+                                        </small>
+                                    </div>
+                                    <div class="col-12 lg:col-6 field">
+                                        <label for="lastName" class="Formlabel">last
+                                            Name</label>
+                                        <input id="lastName" type="text" class="p-inputtext w-full mb-1 "
+                                            formControlName="lastName"
+                                            [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }">
+                                        <small *ngIf="submitted && f['lastName'].errors" class="p-error">
+                                            <div *ngIf="f['lastName'].errors['required']">last Name is required</div>
+                                            <div *ngIf="f['lastName'].errors['lastName']">last Name is invalid</div>
+                                            <div *ngIf="f['lastName'].errors['maxlength']">Limit over</div>
+                                        </small>
+                                    </div>
+                                    <div class="col-12 lg:col-6 field">
+                                        <label for="Apartment"
+                                            class="Formlabel">Apartment</label>
+                                        <input id="Apartment" type="text" class="p-inputtext w-full mb-1 "
+                                            formControlName="Apartment"
+                                            [ngClass]="{ 'is-invalid': submitted && f['Apartment'].errors }">
+                                        <small *ngIf="submitted && f['Apartment'].errors" class="p-error">
+                                            <div *ngIf="f['Apartment'].errors['required']">Apartment is required</div>
+                                            <div *ngIf="f['Apartment'].errors['Apartment']">Apartment is invalid</div>
+                                            <div *ngIf="f['Apartment'].errors['maxlength']">Limit over</div>
+                                        </small>
+                                    </div>
+                                    <div class="col-12 lg:col-6 field">
+                                        <label for="District"
+                                            class="Formlabel">District</label>
+                                        <input id="District" type="text"
+                                            class="text-900 font-medium mb-1 block "
+                                            formControlName="District" pInputText
+                                            [ngClass]="{ 'is-invalid': submitted && f['District'].errors }">
+                                        <small *ngIf="submitted && f['District'].errors" class="p-error">
+                                            <div *ngIf="f['District'].errors['required']">District is required</div>
+                                            <div *ngIf="f['District'].errors['District']">District is invalid</div>
+                                        </small>
+                                    </div>
+                                    <div class="col-12 lg:col-6 field">
+                                        <label for="City" class="Formlabel">City</label>
+                                        <input id="City" type="text"
+                                            class="text-900 font-medium  mb-1 block " formControlName="City"
+                                            pInputText [ngClass]="{ 'is-invalid': submitted && f['District'].errors }">
+                                        <small *ngIf="submitted && f['City'].errors" class="p-error">
+                                            <div *ngIf="f['City'].errors['required']">City is required</div>
+                                            <div *ngIf="f['City'].errors['City']">City is invalid</div>
+                                        </small>
+                                    </div>
+                                    <div class="col-12 lg:col-6 field">
+                                        <label for="Phone" class="Formlabel">Phone</label>
+                                        <input id="Phone" type="text"
+                                            class="text-900 font-medium mb-1 block " formControlName="Phone"
+                                            pInputText [ngClass]="{ 'is-invalid': submitted && f['Phone'].errors }">
+                                        <small *ngIf="submitted && f['Phone'].errors" class="p-error">
+                                            <div *ngIf="f['Phone'].errors['required']">Phone number is required</div>
+                                            <div *ngIf="f['Phone'].errors['maxlength']">only 10 digits are allowed</div>
+                                            <div *ngIf="f['Phone'].errors['minlength']">Enter 10 digits</div>
+                                            <div *ngIf="f['Phone'].errors['pattern']">Character not allowed</div>
+                                        </small>
+                                    </div>
+                                    <div class="col-12 field mb-0">
+                                        <label for="pinCode" class="text-900 font-medium my-1">Pin code</label>
+                                        <input type="text" name="pinCode" formControlName="pinCode"  pInputText [ngClass]="{'is-invalid':submitted && f['pinCode'].errors}"/>
+                                        <small *ngIf="submitted && f['pinCode'].errors" class="p-error">
+                                            <div *ngIf="f['pinCode'].errors['required']">Pin Code is required</div>
+                                            <div *ngIf="f['pinCode'].errors['maxlength']">only 6 digits are allowed</div>
+                                            <div *ngIf="f['pinCode'].errors['minlength']">Enter 6 digits</div>
+                                        </small>
+                                    </div>
+                                    <!-- <div class="col-12 field">
+                                        <label for="Remark" class="Formlabel">Remark</label>
+                                        <textarea [rows]="5" [cols]="30" pInputTextarea [autoResize]="true"></textarea>
+                                    </div> -->
+                                    <section class="surface-ground px-4 py-2 mx-2 mt-3  w-full">
+                                        <div class="text-900 text-xl font-medium mb-3 text-center">Payment Methods</div>
+                                            <div class="grid">
+                                                <div class="col-12 lg:col-6 p-3" (click)="ClearValidationInputData()">
+                                                   <input type="radio" name="paymentOption" id="0" formControlName="paymentOption"
+                                                        value="0" />
+
+                                                    <label for="0" class="lbl-radio lbl-radio surface-card">
+                                                        <div class="flex align-items-center mb-4">
+                                                            <div class="content">
+                                                                <div class="title text-900 text-xl mb-2 font-medium">
+                                                                    Cash On Delivery</div>
+                                                                <div class=" subtext m-0 text-600 font-medium text-sm">
+                                                                    Will be received in 4 Days</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="marker"></div>
+                                                    </label>
+                                                    <small *ngIf="submitted && f['paymentOption'].errors" class="p-error">
+                                                        <div *ngIf="f['paymentOption'].errors['required']">Payment Option is required</div>
+                                                    </small>
+                                                </div>
+                                                <!-- radio -->
+                                                <div class="col-12 lg:col-6 p-3">
+                                                 
+                                                    <input type="radio" name="paymentOption" id="1" formControlName="paymentOption"
+                                                        value="1">
+                                                    <label for="1" class="lbl-radio surface-card">
+                                                        <div class="flex align-items-center mb-4">
+                                                            <div class="content">
+                                                                <div class="title text-900 text-xl mb-2 font-medium">
+                                                                    ZaloPay E-Wallet</div>
+                                                                <div class=" subtext m-0 text-600 font-medium text-sm">
+                                                                    Will be received in 4 Days</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="marker"></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                    
+                                    </section>
+                                    <ng-container *ngIf="checkoutform.value.paymentOption==='1'">
+                                        <div class="grid grid-nogutter w-full border-1 surface-border mx-2 transition-duration-1000">
+                                  
+                                        <div class="col-12 field mb-4 p-1">
+                                            <label for="cc" class="text-900 font-medium mb-3 block ">Card
+                                                Number</label>
+                                            <input pInputText id="cc" type="text" name="cc" formControlName="CardNumber"
+                                                placeholder="1234-1234-1234-1234" class="mb-1"
+                                                [ngClass]="{ 'is-invalid': submitted && f['CardNumber'].errors }" />
+                                            <small *ngIf="submitted && f['CardNumber'].errors" class="p-error">
+                                                <div *ngIf="f['CardNumber'].errors['required']">Card Number is required</div>
+                                                <div *ngIf="f['CardNumber'].errors['minlength']">Enter minimum 16 digit</div>
+                                                <div *ngIf="f['CardNumber'].errors['maxlength']">Only Allowed 16 digit</div>
+                                                
+                                            </small>
+                                        </div>
+                                        <div class="col-12 lg:col-6 field mb-4 p-1 ">
+                                            <label for="exp" class="text-900 font-medium mb-3 block">Expiry
+                                                Date</label><input id="exp" type="text" name="exp" pInputText
+                                                formControlName="Expiry" placeholder="MM/YY" class="mb-1"
+                                                [ngClass]="{ 'is-invalid': submitted && f['Expiry'].errors }" />
+                                            <small *ngIf="submitted && f['Expiry'].errors" class="p-error">
+                                                <div *ngIf="f['Expiry'].errors['required']">Expiry Date is required</div>
+                                                <div *ngIf="f['Expiry'].errors['minlength']">Enter minimum 4 digit</div>
+                                                <div *ngIf="f['Expiry'].errors['maxlength']">Only Allowed 4 digit</div>
+                                            </small>
+
+                                        </div>
+                                        <div class="col-12 lg:col-6 field mb-4 p-1">
+                                            <label for="cvv"
+                                                class="text-900 font-medium mb-3 block ">CVC</label><input
+                                                class="mb-1" formControlName="CVC" type="text" pInputText
+                                                placeholder="123"
+                                                [ngClass]="{ 'is-invalid': submitted && f['CVC'].errors }" />
+                                            <small *ngIf="submitted && f['CVC'].errors" class="p-error">
+                                                <div *ngIf="f['CVC'].errors['required']">CVC is required</div>
+                                                <div *ngIf="f['CVC'].errors['minlength']">Enter minimum 3 digit</div>
+                                                <div *ngIf="f['CVC'].errors['maxlength']">Only Allowed 3 digit</div>
+                                            </small>
+
+                                        </div>
+                                        <div class="col-12 field p-1"><label for="holderName"
+                                                class="text-900 font-medium mb-3 ">Card holder
+                                                Name</label><input id="holderName" type="text" class="mb-1"
+                                                formControlName="CardholderName" pInputText
+                                                [ngClass]="{ 'is-invalid': submitted && f['CardholderName'].errors }" />
+                                            <small *ngIf="submitted && f['CardholderName'].errors" class="p-error">
+                                                <div *ngIf="f['CardholderName'].errors['required']">Account holder Name
+                                                    is required</div>
+                                                <div *ngIf="f['CardholderName'].errors['minlength']">Enter minimum 2 digit</div>
+                                                <div *ngIf="f['CardholderName'].errors['maxlength']">limit is over</div>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    </ng-container>
+                                </div>
+                            </div>
+                            <div class="col-12 lg:col-4 p-4 ">
+                                <div class="surface-card p-4 border-round shadow-2 ng-tns-c48-2">
+                                    <div class="border-bottom-1 surface-border pb-4 ng-tns-c48-2">
+                                        <span class="text-900 text-xl block ng-tns-c48-2">Order Summary</span>
+                                    </div>
+                                    <div class="border-bottom-1 surface-border my-1 py-2 ng-tns-c48-2">
+                                        <div class="flex justify-content-between mb-3 ng-tns-c48-2"><span
+                                                class="text-900 ng-tns-c48-2">Price</span><span
+                                                class="text-900 ng-tns-c48-2">{{price | currency:'INR'}}</span></div>
+                                        <div class="flex justify-content-between mb-3 ng-tns-c48-2"><span
+                                                class="text-900 ng-tns-c48-2">Delivery</span><span
+                                                class="text-green-500 ng-tns-c48-2">Free</span></div>
+                                        <div class="flex justify-content-between mb-3 ng-tns-c48-2"><span
+                                                class="text-900 ng-tns-c48-2">Discount</span><span
+                                                class="text-900 ng-tns-c48-2">{{discount | currency:'INR'}}%</span>
+                                        </div>
+                                    </div>
+                                    <div class="py-2 mt-3 border-bottom-1 surface-border ng-tns-c46-2">
+                                        <div class="p-inputgroup mb-3 ng-tns-c46-2"><input type="text" pinputtext=""
+                                                formControlName="Promocode" placeholder="Promo code"
+                                                class="p-inputtext p-component p-element w-full ng-tns-c46-2 ng-pristine ng-valid ng-touched"><button
+                                                type="button" pbutton="" pripple="" label="Apply"
+                                                class="p-element p-ripple ng-tns-c46-2 p-button p-button-success p-component"
+                                              ><span class="p-button-label ">Apply</span><span
+                                                    class="p-ink"></span></button></div>
+                                    </div>
+                                    <div class="border-bottom-1 surface-border my-1 py-2 ng-tns-c48-2">
+                                        <div class="flex justify-content-between mb-3 ng-tns-c48-2"><span
+                                                class="text-900 font-medium ng-tns-c48-2">Total</span><span
+                                                class="text-900 font-bold ng-tns-c48-2">{{totalprice |
+                                                currency:'INR'}}</span></div>
+                                    </div>
+                                    <button type="button" pTooltip="Place The Order" tooltipPosition="top"
+                                    tooltipEvent="focus" pbutton="" pripple="" label="Place Order" (click)="confirm($event)"
+                                   
+                                    class="p-element p-ripple  border-none hover:bg-primary w-full mt-3 ng-tns-c48-2 p-button p-component"><span
+                                        class="p-button-label">Place Order</span><span
+                                        class="p-ink"></span></button>
+                                    <button type="button" pbutton="" pripple="" label="Place Order" routerLink="/cart"
+                                        class="p-element p-ripple  border-none hover:bg-primary w-full mt-3 ng-tns-c48-2 p-button p-component"><span
+                                            class="p-button-label">Return To Cart</span><span
+                                            class="p-ink"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+        
+            <p-toast></p-toast>
+            <p-confirmPopup></p-confirmPopup>

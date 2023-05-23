@@ -1,0 +1,25 @@
+li {
+	font-family: "Lato", sans-serif;
+	font-size: 20px;
+	color: #332c2c;
+	line-height: normal;
+    text-align: center;
+}
+.box-1 ul{
+display: flex;
+justify-content: space-around;
+flex-direction: column;
+align-items: center;
+gap: .5rem;
+}
+
+.productname{
+    width: 100%;
+    word-wrap: break-word;
+}
+.productname span{
+    word-wrap: break-word;
+}
+img{
+    width: 50%;
+}

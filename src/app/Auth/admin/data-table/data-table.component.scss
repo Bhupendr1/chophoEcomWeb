@@ -1,0 +1,60 @@
+.product-badge.status-In-Stock {
+    padding: .5rem;
+    border-radius: 4px;
+    background: #C8E6C9;
+    color: #256029;
+}
+.product-badge.status-Less-Stock {
+    padding: .5rem;
+    border-radius: 4px;
+    background: #FEEDAF;
+    color: #8a5340;
+}
+.product-badge.status-Out-Of-Stock{
+    padding: .5rem;
+    border-radius: 4px;
+    background: #FFCDD2;
+    color: #c63737;
+}
+.is-invalid{
+    border: 1px solid red;
+}
+select:focus {
+    border-color: rgb(22, 157, 247);
+  }
+select{
+    padding: 0.75rem 0.75rem;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    color: #6c757d;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+
+}
+option{
+    background-color: #fff;
+    border: none;
+    transition: .3s ease-in-out;
+   
+}
+
+// $status: left;
+// .bordered {
+//   @if $status == qty<10 {
+//     border-top: 1px solid #000;
+//   }
+//   @else if $status == right {
+//     border-right: 1px solid #000;
+//   }
+//   @else if $status == bottom {
+//     border-bottom: 1px solid #000;
+//   }
+//   @else if $status == left {
+//     border-left: 1px solid #000;
+//   }
+// }

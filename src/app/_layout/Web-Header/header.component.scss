@@ -1,0 +1,35 @@
+.active{
+    border-bottom-style: solid;
+    border-bottom-color: darkblue;
+}
+.headerborder {
+	border: 1px solid #dee2e6;
+	border-width: 0 0 1px 0;
+}
+
+.logo-container {
+    position: -webkit-sticky;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+}
+
+.routeactive{
+	color: #004bfd;
+	border-bottom: 1px solid rgb(48, 121, 255);
+}
+.logo{
+	width:173px;
+	height:auto;
+}
+.logo img{
+	width: 100%;
+	display: block;
+}
+
+@media (max-width: 575.98px) {
+	.logo{
+		width:35% !important;
+	}
+}
+

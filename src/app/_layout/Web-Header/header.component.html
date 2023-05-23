@@ -1,0 +1,33 @@
+<div class="layout-topbar logo-container">
+    <div class="flex lg:flex-row lg:align-items-center justify-content-between headerborder surface-card px-3">
+        <div class="logo">
+            <img src="assets/image/logo.png" alt="Image" routerLink="/" class="cursor-pointer">
+        </div>
+    
+    <div class="flex flex-grow-1 justify-content-end gap-3 align-items-center">
+        <ul class="list-none flex gap-2 mr-2 align-items-center">
+            <li>
+                <a>
+                    <img src="assets/image/england.png" alt="england flag" [class.active]="switchlang=='products'" class="cursor-pointer" (click)="useLanguage('products')">
+                </a>
+            </li>
+            <li>
+                    <i class="pi pi-minus rotate-90"></i>
+            </li>
+            <li>
+                <a>
+                    <img src="assets/image/vietnam.png" alt="england flag" [class.active]="switchlang=='tamil'"  class="cursor-pointer" (click)="useLanguage('tamil')">
+                </a>
+            </li>
+            <li>
+                   <i class="pi pi-minus rotate-90"></i>
+            </li>
+            <li>
+                <a routerLink="/cart">
+                    <i pBadge class="pi pi-shopping-cart ng-cart text-xl p-overlay-badge" severity="success" value={{cartCount}}></i>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+
+.rwd-media {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 */
+  }
+  
+  .rwd-media iframe,
+  .rwd-media video {
+    position: absolute;
+    width: 80%;
+    height: 80%;  
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  
+  body { background: #ddd; margin: 0; }
+  
+  .content {
+     background: #fff;
+
+    padding: 8rem;
+
+    height: 60vh;
+}

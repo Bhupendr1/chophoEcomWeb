@@ -1,0 +1,83 @@
+<ng-container *ngIf="cart.length > 0">
+    <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+        <form [formGroup]="checkoutForm">
+            <div class="flex flex-column align-items-center mb-6">
+                <div class="text-gray-800 text-4xl mb-4 font-medium text-center" formControlName="Price">Your total Amount is: <span class="text-green-500">{{ getTotal() | currency:'INR' }}</span>
+                    </div>
+                <button pbutton type="button" (click)="checkOut()" pripple="" label="Check Out"
+                    class="p-element p-ripple p-button p-component"><span class="p-button-label">Check Out</span><span
+                        class="p-ink"></span></button>
+
+            </div>
+        </form>
+        <div class="border-1 surface-border mb-1 p-1"  *ngFor="let item of cart">
+          <ul class="list-none gap-3 md:gap-0 sm:p-0 sm:m-0 w-full flex align-items-center lg:justify-content-between justify-content-center flex-column md:flex-row surface-border">
+            <div class="box-1">
+                <ul>
+                <li>
+                    <img src="data:image/jpeg;base64,{{item.image}}" class="">
+    
+                </li>
+                <li class="productname">
+                <span>{{item.iname}}</span>  
+                </li>
+            </ul>
+            </div>
+
+            <li class="flex align-items-center justify-content-between gap-2">
+                <button type="button" fill="clear" (click)="decreaseCartItem(item)"
+                    class="p-element p-button-danger p-inputnumber-button p-inputnumber-button-down p-button p-component p-button-icon-only"
+                    [disabled]="item.qunatity == 1">
+                    <span class="pi pi-minus" aria-hidden="true"></span>
+                </button>
+
+                {{ item.qunatity }}
+
+                <div *ngIf="item.Qunatity==item.totalQunatity; else elseBlock">
+                    <button type="button" label="Limit Over" pButton
+                        class="p-element p-button-danger p-inputnumber-button p-inputnumber-button-up p-button p-component p-button-icon-only">
+
+                    </button>
+                </div>
+                <ng-template #elseBlock>
+                    <button type="button" (click)="increaseCartItem(item)"
+                        class="p-element p-button-success p-inputnumber-button p-inputnumber-button-up p-button p-component p-button-icon-only">
+                        <span class="p-button-icon pi pi-plus" aria-hidden="true"></span>
+                    </button>
+                </ng-template>
+            </li>
+            <li>
+                {{item.qunatity * item.price | currency:'INR'}}
+
+            </li>
+            <li>
+                Available in Stock:{{item.totalQunatity}}
+            </li>
+            <li>
+                <a tabindex="0" (click)="removeCartItem(item)"
+                    class="cursor-pointer text-red-500 font-medium hover:text-pink-500 transition-colors transition-duration-300  border-round">
+                    Remove Item
+                </a>
+            </li>
+        </ul>     
+    </div>
+    </div>
+
+    <p-toast position="bottom-center" key="s" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-toast>
+    <p-toast position="top-center" key="e" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-toast>
+    <p-toast position="bottom-center" key="st" [showTransitionOptions]="'0ms'"
+        [hideTransitionOptions]="'0ms'"></p-toast>
+</ng-container>
+<ng-container *ngIf="cart.length === 0">
+    <div class="flex flex-column" style="height: 100vh;">
+
+        <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+            <div class="flex flex-column align-items-center mb-6">
+                <div class="text-900 text-4xl mb-4 font-medium text-center">Your cart is Empty</div>
+                <p class="text-600 font-medium text-xl mt-0 mb-4">Add some Product</p><button pbutton="" routerLink="/"
+                    pripple="" label="Check Out" class="p-element p-ripple p-button p-component"><span
+                        class="p-button-label">Add Now</span><span class="p-ink"></span></button>
+            </div>
+        </div>
+    </div>
+</ng-container>
